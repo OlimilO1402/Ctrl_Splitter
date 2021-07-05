@@ -81,7 +81,7 @@ Private Sub Splitter1_OnMove(Sender As Splitter)
 End Sub
 
 Private Sub BtnNext_Click()
-    Form7.Show
+    Form8.Show
 End Sub
 
 

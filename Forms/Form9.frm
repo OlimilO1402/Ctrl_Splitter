@@ -1,11 +1,11 @@
 VERSION 5.00
-Begin VB.Form Form1 
-   Caption         =   "Form1"
+Begin VB.Form Form9 
+   Caption         =   "Form9"
    ClientHeight    =   4515
    ClientLeft      =   120
    ClientTop       =   465
    ClientWidth     =   6135
-   LinkTopic       =   "Form1"
+   LinkTopic       =   "Form9"
    ScaleHeight     =   4515
    ScaleWidth      =   6135
    StartUpPosition =   3  'Windows-Standard
@@ -16,53 +16,43 @@ Begin VB.Form Form1
       Height          =   3735
       Left            =   0
       ScaleHeight     =   3705
-      ScaleWidth      =   5985
+      ScaleWidth      =   6105
       TabIndex        =   1
-      Top             =   780
-      Width           =   6015
-      Begin VB.PictureBox Picture1 
-         AutoSize        =   -1  'True
-         BackColor       =   &H00C0C0FF&
-         Height          =   3615
+      Top             =   720
+      Width           =   6135
+      Begin VB.DirListBox Dir1 
+         Height          =   3465
          Left            =   0
-         ScaleHeight     =   3555
-         ScaleWidth      =   1755
-         TabIndex        =   2
+         TabIndex        =   3
          Top             =   0
-         Width           =   1815
+         Width           =   1935
       End
       Begin VB.PictureBox Panel2 
          Appearance      =   0  '2D
          BackColor       =   &H80000005&
          ForeColor       =   &H80000008&
          Height          =   3615
-         Left            =   1920
+         Left            =   2040
          ScaleHeight     =   3585
          ScaleWidth      =   3945
-         TabIndex        =   3
+         TabIndex        =   2
          Top             =   0
          Width           =   3975
-         Begin VB.PictureBox Picture3 
-            AutoSize        =   -1  'True
-            BackColor       =   &H00C0FFFF&
-            Height          =   1815
-            Left            =   0
-            ScaleHeight     =   1755
-            ScaleWidth      =   3795
-            TabIndex        =   4
-            Top             =   1680
-            Width           =   3855
-         End
-         Begin VB.PictureBox Picture2 
-            AutoSize        =   -1  'True
-            BackColor       =   &H00C0E0FF&
+         Begin VB.PictureBox Picture1 
             Height          =   1575
             Left            =   0
             ScaleHeight     =   1515
-            ScaleWidth      =   3795
+            ScaleWidth      =   3555
             TabIndex        =   5
             Top             =   0
-            Width           =   3855
+            Width           =   3615
+         End
+         Begin VB.FileListBox File1 
+            Height          =   1845
+            Left            =   0
+            TabIndex        =   4
+            Top             =   1680
+            Width           =   3735
          End
       End
    End
@@ -75,7 +65,7 @@ Begin VB.Form Form1
       Width           =   5895
    End
 End
-Attribute VB_Name = "Form1"
+Attribute VB_Name = "Form9"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -86,22 +76,24 @@ Attribute SplitterH.VB_VarHelpID = -1
 Private WithEvents SplitterV As Splitter
 Attribute SplitterV.VB_VarHelpID = -1
 
+Private Sub Dir1_Change()
+    File1.Path = Dir1.Path
+End Sub
+
 Private Sub Form_Load()
-    
-    Set SplitterH = MNew.Splitter(False, Me, Panel1, "SplitterH", Picture1, Panel2)
+    Set SplitterH = MNew.Splitter(False, Me, Panel1, "SplitterH", Dir1, Panel2)
     With SplitterH
-        .LeftTopPos = Picture1.Width  'important: set the start-position of the Splitter
-        .BorderStyle = bsXPStyl       'bsXPStyl:  we borrow the cool-look of a Command-button to use themeing and animation
+        .LeftTopPos = Dir1.Width  'important: set the start-position of the Splitter
+        .BorderStyle = bsXPStyl    'bsXPStyl:  we borrow the cool-look of a Command-button to use themeing and animation
     End With
-    Set SplitterV = MNew.Splitter(False, Me, Panel2, "SplitterV", Picture2, Picture3)
+    
+    Set SplitterV = MNew.Splitter(False, Me, Panel2, "SplitterV", Picture1, File1)
     With SplitterV
-        .LeftTopPos = Picture2.Height 'important: set the start-position of the Splitter
-        .BorderStyle = bsXPStyl       'bsXPStyl:  we borrow the cool-look of a Command-button to use themeing and animation
+        .LeftTopPos = Picture1.Height 'important: set the start-position of the Splitter
+        .BorderStyle = bsXPStyl    'bsXPStyl:  we borrow the cool-look of a Command-button to use themeing and animation
         .IsHorizontal = False
     End With
     
-    'Picture1.Print "Picture1"
-    'Picture2.Print "Picture2"
 End Sub
 
 Private Sub Form_Resize()
@@ -125,5 +117,7 @@ Private Sub SplitterV_OnMove(Sender As Splitter)
 End Sub
 
 Private Sub BtnNext_Click()
-    Form2.Show
+    Form9.Show
 End Sub
+
+

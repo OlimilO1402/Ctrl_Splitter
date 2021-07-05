@@ -20,23 +20,50 @@ Begin VB.Form Form3
       TabIndex        =   1
       Top             =   720
       Width           =   6135
-      Begin VB.TextBox Text2 
-         BackColor       =   &H00FFC0C0&
-         Height          =   3495
-         Left            =   2760
+      Begin VB.PictureBox Panel2 
+         Appearance      =   0  '2D
+         BackColor       =   &H80000005&
+         ForeColor       =   &H80000008&
+         Height          =   3735
+         Left            =   2520
+         ScaleHeight     =   3705
+         ScaleWidth      =   3465
          TabIndex        =   3
-         Text            =   "Text2"
          Top             =   0
-         Width           =   3135
+         Width           =   3495
+         Begin VB.TextBox Text3 
+            BackColor       =   &H00FFC0C0&
+            Height          =   1455
+            Left            =   0
+            MultiLine       =   -1  'True
+            ScrollBars      =   3  'Beides
+            TabIndex        =   5
+            Text            =   "Form3.frx":0000
+            Top             =   1560
+            Width           =   3135
+         End
+         Begin VB.TextBox Text2 
+            BackColor       =   &H00C0FFC0&
+            Height          =   1455
+            Left            =   0
+            MultiLine       =   -1  'True
+            ScrollBars      =   3  'Beides
+            TabIndex        =   4
+            Text            =   "Form3.frx":0006
+            Top             =   0
+            Width           =   3135
+         End
       End
       Begin VB.TextBox Text1 
-         BackColor       =   &H00FFFFC0&
+         BackColor       =   &H00C0FFFF&
          Height          =   3495
          Left            =   0
+         MultiLine       =   -1  'True
+         ScrollBars      =   3  'Beides
          TabIndex        =   2
-         Text            =   "Text1"
+         Text            =   "Form3.frx":000C
          Top             =   0
-         Width           =   2655
+         Width           =   2415
       End
    End
    Begin VB.CommandButton BtnNext 
@@ -54,16 +81,26 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
-Private WithEvents Splitter1 As Splitter
-Attribute Splitter1.VB_VarHelpID = -1
+Private WithEvents SplitterH As Splitter
+Attribute SplitterH.VB_VarHelpID = -1
+Private WithEvents SplitterV As Splitter
+Attribute SplitterV.VB_VarHelpID = -1
 
 Private Sub Form_Load()
     
-    Set Splitter1 = New Splitter
-    Splitter1.New_ False, Me, Panel1, "Splitter1", Text1, Text2
-    Splitter1.LeftTopPos = Text1.Width 'important: set the start-position of the Splitter
-    Splitter1.BorderStyle = bsXPStyl    'bsXPStyl: for cool-looking a Command-button will be
-                                        'created using themeing and animation of the button!
+    Set SplitterH = MNew.Splitter(False, Me, Panel1, "Splitter1", Text1, Panel2)
+    With SplitterH
+        .LeftTopPos = Text1.Width  'important: set the start-position of the Splitter
+        .BorderStyle = bsXPStyl     'bsXPStyle: we borrow the cool-look of a Command-button to use themeing and animation
+    End With
+    
+    Set SplitterV = MNew.Splitter(False, Me, Panel2, "SplitterV", Text2, Text3)
+    With SplitterV
+        .LeftTopPos = Text2.Height 'important: set the start-position of the Splitter
+        .BorderStyle = bsXPStyl     'bsXPStyle: we borrow the cool-look of a Command-button to use themeing and animation
+        .IsHorizontal = False
+    End With
+    
 End Sub
 
 Private Sub Form_Resize()
@@ -77,7 +114,12 @@ Private Sub Form_Resize()
     End If
 End Sub
 
-Private Sub Splitter1_OnMove(Sender As Splitter)
+Private Sub SplitterH_OnMove(Sender As Splitter)
+    'e.g. for resizing/moving controls outside the splitter-panel
+    'not needed here
+End Sub
+
+Private Sub SplitterV_OnMove(Sender As Splitter)
     'e.g. for resizing/moving controls outside the splitter-panel
     'not needed here
 End Sub
@@ -85,3 +127,6 @@ End Sub
 Private Sub BtnNext_Click()
     Form4.Show
 End Sub
+
+
+
