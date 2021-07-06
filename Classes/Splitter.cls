@@ -198,7 +198,6 @@ Private Sub mXPStyleC_DblClick()
     RaiseEvent OnDoubleClick(Me)
 End Sub
 
-
 Private Sub mContainer_Resize()
     'MDIForm1.Text1.Text = "mCResize: L=" & CStr(mContainer.Left) & " T=" & CStr(mContainer.Top) & " W=" & CStr(mContainer.Width) & " H=" & CStr(mContainer.Height)
     'If Not mBolResizeSelf Then
@@ -280,7 +279,6 @@ Public Sub ResizeControls()
     If mHorVer Then 'Horizontaler Splitter
         Select Case m12LTRB
         Case 1 '(01)1: LeftCtrl RghtSplt;
-            Debug.Print "1"
             L1 = 0:                     T1 = 0
             If mLeftTopPos = -1 Then mLeftTopPos = mLeftTopCtrl.Width
             W1 = mLeftTopPos + DX:      H1 = mContainer.Height
@@ -293,7 +291,6 @@ Public Sub ResizeControls()
             LC = mContainer.Left:       TC = mContainer.Top
             WC = W1 + Wm:               HC = H1
         Case 2 '(10)2: LeftSplt RghtCtrl;
-            Debug.Print "2"
             'If mLeftTopPos = -1 Then mLeftTopPos = 0
             LC = mContainer.Left + DX:  TC = mContainer.Top
             WC = mContainer.Width - DX: HC = mContainer.Height
@@ -311,7 +308,6 @@ Public Sub ResizeControls()
             'If mLeftTopPos = -1 Then mLeftTopPos = mLeftTopCtrl.Width
             
         Case 3 '(11)3: LeftTopCtrl MidSplit RightBotCtrl
-            Debug.Print "3"
             L1 = 0:                     T1 = 0
             If mLeftTopPos = -1 Then mLeftTopPos = mLeftTopCtrl.Width
             W1 = mLeftTopPos + DX:      H1 = mContainer.Height
@@ -327,7 +323,6 @@ Public Sub ResizeControls()
     Else 'Vertikaler Splitter
         Select Case m12LTRB
         Case 1 '(01)1: TopCtrl BotSplt;
-            Debug.Print "4"
             L1 = 0:                     T1 = 0
             If mLeftTopPos = -1 Then mLeftTopPos = mLeftTopCtrl.Height
             W1 = mContainer.Width:      H1 = mLeftTopPos + DY
@@ -341,10 +336,8 @@ Public Sub ResizeControls()
             WC = W1:                    HC = H1 + Hm
             
         Case 2 '(10)2: TopSplt BotCtrl;
-            Debug.Print "5"
         
         Case 3 '(11)3: LeftTopCtrl MidSplit RightBotCtrl
-            Debug.Print "6"
             L1 = 0:                     T1 = 0
             If mLeftTopPos = -1 Then mLeftTopPos = mLeftTopCtrl.Height
             W1 = mContainer.Width:      H1 = mLeftTopPos + DY
@@ -435,3 +428,4 @@ Private Sub Class_Terminate()
     Set mLeftTopCtrl = Nothing
     Set mRghtBotCtrl = Nothing
 End Sub
+
