@@ -1,12 +1,12 @@
 VERSION 5.00
 Begin VB.Form Form2 
    Caption         =   "Form2"
-   ClientHeight    =   4515
+   ClientHeight    =   4575
    ClientLeft      =   120
    ClientTop       =   465
    ClientWidth     =   6135
    LinkTopic       =   "Form2"
-   ScaleHeight     =   4515
+   ScaleHeight     =   4575
    ScaleWidth      =   6135
    StartUpPosition =   3  'Windows-Standard
    Begin VB.CommandButton BtnNext 
@@ -24,17 +24,17 @@ Begin VB.Form Form2
       Height          =   3735
       Left            =   0
       ScaleHeight     =   3705
-      ScaleWidth      =   6105
+      ScaleWidth      =   5985
       TabIndex        =   0
-      Top             =   780
-      Width           =   6135
+      Top             =   720
+      Width           =   6015
       Begin VB.PictureBox Panel2 
          Appearance      =   0  '2D
          BackColor       =   &H80000005&
          ForeColor       =   &H80000008&
-         Height          =   3735
-         Left            =   2520
-         ScaleHeight     =   3705
+         Height          =   3615
+         Left            =   2400
+         ScaleHeight     =   3585
          ScaleWidth      =   3465
          TabIndex        =   3
          Top             =   0
@@ -65,7 +65,7 @@ Begin VB.Form Form2
          Left            =   0
          TabIndex        =   2
          Top             =   0
-         Width           =   1935
+         Width           =   2295
       End
    End
 End
@@ -81,20 +81,20 @@ Private WithEvents SplitterV As Splitter
 Attribute SplitterV.VB_VarHelpID = -1
 
 Private Sub Form_Load()
-    
+
     Set SplitterH = MNew.Splitter(False, Me, Panel1, "Splitter1", Label1, Panel2)
     With SplitterH
-        .LeftTopPos = Label1.Width  'important: set the start-position of the Splitter
         .BorderStyle = bsXPStyl     'bsXPStyle: we borrow the cool-look of a Command-button to use themeing and animation
+        .LeftTopPos = Label1.Width  'important: set the start-position of the Splitter
     End With
-    
+
     Set SplitterV = MNew.Splitter(False, Me, Panel2, "SplitterV", Label2, Label3)
     With SplitterV
-        .LeftTopPos = Label2.Height 'important: set the start-position of the Splitter
-        .BorderStyle = bsXPStyl     'bsXPStyle: we borrow the cool-look of a Command-button to use themeing and animation
         .IsHorizontal = False
+        .BorderStyle = bsXPStyl     'bsXPStyle: we borrow the cool-look of a Command-button to use themeing and animation
+        .LeftTopPos = Label2.Height * Screen.TwipsPerPixelY 'important: set the start-position of the Splitter
     End With
-    
+
 End Sub
 
 Private Sub Form_Resize()

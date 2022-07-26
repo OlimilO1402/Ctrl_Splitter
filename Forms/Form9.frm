@@ -98,12 +98,12 @@ End Sub
 
 Private Sub Form_Resize()
     Dim brdr As Single: brdr = 8 * Screen.TwipsPerPixelX
-    Dim l As Single
+    Dim L As Single
     Dim T As Single: T = BtnNext.Top + BtnNext.Height + brdr
     Dim W As Single: W = Me.ScaleWidth
     Dim H As Single: H = Me.ScaleHeight - T
     If W > 0 And H > 0 Then
-        Panel1.Move l, T, W, H
+        Panel1.Move L, T, W, H
     End If
 End Sub
 

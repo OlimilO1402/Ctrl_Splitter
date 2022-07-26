@@ -1,13 +1,13 @@
 VERSION 5.00
 Begin VB.Form Form8 
    Caption         =   "Form8"
-   ClientHeight    =   4515
+   ClientHeight    =   4575
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   6135
+   ClientWidth     =   6270
    LinkTopic       =   "Form8"
-   ScaleHeight     =   4515
-   ScaleWidth      =   6135
+   ScaleHeight     =   4575
+   ScaleWidth      =   6270
    StartUpPosition =   3  'Windows-Standard
    Begin VB.CommandButton BtnNext 
       Caption         =   "Next >>"
@@ -43,11 +43,11 @@ Begin VB.Form Form8
             Height          =   1620
             Left            =   0
             TabIndex        =   5
-            Top             =   1680
+            Top             =   1800
             Width           =   3855
          End
          Begin VB.ListBox List2 
-            Height          =   1425
+            Height          =   1620
             Left            =   0
             TabIndex        =   4
             Top             =   0
@@ -74,27 +74,19 @@ Attribute SplitterH.VB_VarHelpID = -1
 Private WithEvents SplitterV As Splitter
 Attribute SplitterV.VB_VarHelpID = -1
 
-'Private Sub Form_Activate()
-
-'End Sub
-
-'Private Sub Form_Initialize()
-
-'End Sub
-
 Private Sub Form_Load()
     
     Set SplitterH = MNew.Splitter(False, Me, Panel1, "SplitterH", List1, Panel2)
     With SplitterH
-        .LeftTopPos = List1.Width  'important: set the start-position of the Splitter
         .BorderStyle = bsXPStyl    'bsXPStyl:  we borrow the cool-look of a Command-button to use themeing and animation
+        .LeftTopPos = List1.Width  'important: set the start-position of the Splitter
     End With
     
     Set SplitterV = MNew.Splitter(False, Me, Panel2, "SplitterV", List2, List3)
     With SplitterV
-        .LeftTopPos = List2.Height 'important: set the start-position of the Splitter
-        .BorderStyle = bsXPStyl    'bsXPStyl:  we borrow the cool-look of a Command-button to use themeing and animation
         .IsHorizontal = False
+        .BorderStyle = bsXPStyl    'bsXPStyl:  we borrow the cool-look of a Command-button to use themeing and animation
+        .LeftTopPos = List2.Height * Screen.TwipsPerPixelY / 2 'important: set the start-position of the Splitter
     End With
     
 End Sub

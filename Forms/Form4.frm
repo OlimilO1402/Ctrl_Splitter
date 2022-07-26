@@ -1,13 +1,13 @@
 VERSION 5.00
 Begin VB.Form Form4 
    Caption         =   "Form4"
-   ClientHeight    =   4515
+   ClientHeight    =   4575
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   6135
+   ClientWidth     =   6255
    LinkTopic       =   "Form4"
-   ScaleHeight     =   4515
-   ScaleWidth      =   6135
+   ScaleHeight     =   4575
+   ScaleWidth      =   6255
    StartUpPosition =   3  'Windows-Standard
    Begin VB.CommandButton BtnNext 
       Caption         =   "Next >>"
@@ -28,23 +28,44 @@ Begin VB.Form Form4
       TabIndex        =   0
       Top             =   720
       Width           =   6135
-      Begin VB.Frame Frame2 
-         BackColor       =   &H008080FF&
-         Caption         =   "Frame2"
-         Height          =   3135
+      Begin VB.PictureBox Panel2 
+         Appearance      =   0  '2D
+         BackColor       =   &H80000005&
+         ForeColor       =   &H80000008&
+         Height          =   3495
          Left            =   2040
+         ScaleHeight     =   3465
+         ScaleWidth      =   3945
          TabIndex        =   3
-         Top             =   240
-         Width           =   3735
+         Top             =   120
+         Width           =   3975
+         Begin VB.Frame Frame3 
+            BackColor       =   &H00C0C0FF&
+            Caption         =   "Frame2"
+            Height          =   1575
+            Left            =   0
+            TabIndex        =   5
+            Top             =   1800
+            Width           =   3735
+         End
+         Begin VB.Frame Frame2 
+            BackColor       =   &H008080FF&
+            Caption         =   "Frame2"
+            Height          =   1695
+            Left            =   0
+            TabIndex        =   4
+            Top             =   0
+            Width           =   3735
+         End
       End
       Begin VB.Frame Frame1 
          BackColor       =   &H00FFC0FF&
          Caption         =   "Frame1"
-         Height          =   2775
+         Height          =   3495
          Left            =   120
          TabIndex        =   2
-         Top             =   240
-         Width           =   1695
+         Top             =   120
+         Width           =   1815
       End
    End
 End
@@ -56,14 +77,25 @@ Attribute VB_Exposed = False
 Option Explicit
 Private WithEvents Splitter1 As Splitter
 Attribute Splitter1.VB_VarHelpID = -1
+Private WithEvents Splitter2 As Splitter
+Attribute Splitter2.VB_VarHelpID = -1
 
 Private Sub Form_Load()
     
-    Set Splitter1 = New Splitter
-    Splitter1.New_ False, Me, Panel1, "Splitter1", Frame1, Frame2
-    Splitter1.LeftTopPos = Frame1.Width 'important: set the start-position of the Splitter
-    Splitter1.BorderStyle = bsXPStyl    'bsXPStyl: for cool-looking a Command-button will be
-                                        'created using themeing and animation of the button!
+    Set Splitter1 = MNew.Splitter(False, Me, Panel1, "Splitter1", Frame1, Panel2)
+    With Splitter1
+        .BorderStyle = bsXPStyl    'bsXPStyl: for cool-looking a Command-button will be
+        .LeftTopPos = Frame1.Width 'important: set the start-position of the Splitter
+    End With                       'created using themeing and animation of the button!
+        
+    Set Splitter2 = MNew.Splitter(False, Me, Panel2, "Splitter2", Frame2, Frame3)
+    With Splitter2
+        .IsHorizontal = False
+        .BorderStyle = bsXPStyl    'bsXPStyl: for cool-looking a Command-button will be
+        '.LeftTopPos = Frame1.Width 'important: set the start-position of the Splitter
+        .LeftTopPos = Frame2.Height * Screen.TwipsPerPixelY
+    End With                       'created using themeing and animation of the button!
+    
 End Sub
 
 Private Sub Form_Resize()

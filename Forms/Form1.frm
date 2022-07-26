@@ -1,12 +1,12 @@
 VERSION 5.00
 Begin VB.Form Form1 
    Caption         =   "Form1"
-   ClientHeight    =   4515
+   ClientHeight    =   4575
    ClientLeft      =   120
    ClientTop       =   465
    ClientWidth     =   6135
    LinkTopic       =   "Form1"
-   ScaleHeight     =   4515
+   ScaleHeight     =   4575
    ScaleWidth      =   6135
    StartUpPosition =   3  'Windows-Standard
    Begin VB.PictureBox Panel1 
@@ -18,7 +18,7 @@ Begin VB.Form Form1
       ScaleHeight     =   3705
       ScaleWidth      =   5985
       TabIndex        =   1
-      Top             =   780
+      Top             =   720
       Width           =   6015
       Begin VB.PictureBox Picture1 
          AutoSize        =   -1  'True
@@ -45,20 +45,20 @@ Begin VB.Form Form1
          Begin VB.PictureBox Picture3 
             AutoSize        =   -1  'True
             BackColor       =   &H00C0FFFF&
-            Height          =   1815
+            Height          =   1695
             Left            =   0
-            ScaleHeight     =   1755
+            ScaleHeight     =   1635
             ScaleWidth      =   3795
             TabIndex        =   4
-            Top             =   1680
+            Top             =   1800
             Width           =   3855
          End
          Begin VB.PictureBox Picture2 
             AutoSize        =   -1  'True
             BackColor       =   &H00C0E0FF&
-            Height          =   1575
+            Height          =   1695
             Left            =   0
-            ScaleHeight     =   1515
+            ScaleHeight     =   1635
             ScaleWidth      =   3795
             TabIndex        =   5
             Top             =   0
@@ -86,23 +86,37 @@ Attribute SplitterH.VB_VarHelpID = -1
 Private WithEvents SplitterV As Splitter
 Attribute SplitterV.VB_VarHelpID = -1
 
-Private Sub Form_Load()
+Private Sub Form_Initialize()
     
     Set SplitterH = MNew.Splitter(False, Me, Panel1, "SplitterH", Picture1, Panel2)
     With SplitterH
-        .LeftTopPos = Picture1.Width  'important: set the start-position of the Splitter
         .BorderStyle = bsXPStyl       'bsXPStyl:  we borrow the cool-look of a Command-button to use themeing and animation
+        .LeftTopPos = Picture1.Width  'important: set the start-position of the Splitter
     End With
     Set SplitterV = MNew.Splitter(False, Me, Panel2, "SplitterV", Picture2, Picture3)
     With SplitterV
-        .LeftTopPos = Picture2.Height 'important: set the start-position of the Splitter
-        .BorderStyle = bsXPStyl       'bsXPStyl:  we borrow the cool-look of a Command-button to use themeing and animation
         .IsHorizontal = False
+        .BorderStyle = bsXPStyl       'bsXPStyl:  we borrow the cool-look of a Command-button to use themeing and animation
+        .LeftTopPos = Picture2.ScaleHeight * Screen.TwipsPerPixelY 'important: set the start-position of the Splitter
     End With
     
-    'Picture1.Print "Picture1"
-    'Picture2.Print "Picture2"
 End Sub
+
+'Private Sub Form_Load()
+'
+'    Set SplitterH = MNew.Splitter(False, Me, Panel1, "SplitterH", Picture1, Panel2)
+'    With SplitterH
+'        .BorderStyle = bsXPStyl       'bsXPStyl:  we borrow the cool-look of a Command-button to use themeing and animation
+'        .LeftTopPos = Picture1.Width  'important: set the start-position of the Splitter
+'    End With
+'    Set SplitterV = MNew.Splitter(False, Me, Panel2, "SplitterV", Picture2, Picture3)
+'    With SplitterV
+'        .IsHorizontal = False
+'        .BorderStyle = bsXPStyl       'bsXPStyl:  we borrow the cool-look of a Command-button to use themeing and animation
+'        .LeftTopPos = Picture2.ScaleHeight * Screen.TwipsPerPixelY 'important: set the start-position of the Splitter
+'    End With
+'
+'End Sub
 
 Private Sub Form_Resize()
     Dim brdr As Single: brdr = 8 * Screen.TwipsPerPixelX

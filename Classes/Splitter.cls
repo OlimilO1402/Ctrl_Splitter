@@ -74,6 +74,16 @@ Private Sub Class_Initialize()
     mBorderStyle = bsRaised
 End Sub
 
+Private Sub Class_Terminate()
+'    Set mMDIPar = Nothing
+'    Set mParent = Nothing
+'    Set mContainer = Nothing
+'    Set mPicSplit = Nothing
+'    Set mXPStyleC = Nothing
+'    Set mLeftTopCtrl = Nothing
+'    Set mRghtBotCtrl = Nothing
+End Sub
+
 Friend Sub New_(BolMDI As Boolean, MyOwner As Object, MyContainer As Object, Name As String, LeftTop As Control, RghtBot As Control)
     mInitializing = True
     mName = Name
@@ -418,14 +428,4 @@ Private Function MakeBiggerRect(L As Long, T As Long, W As Long, H As Long) As m
     MakeBiggerRect.Right = L + W + 2 * LW + 1
     MakeBiggerRect.Bottom = T + H + 2 * TH
 End Function
-
-Private Sub Class_Terminate()
-    Set mMDIPar = Nothing
-    Set mParent = Nothing
-    Set mContainer = Nothing
-    Set mPicSplit = Nothing
-    Set mXPStyleC = Nothing
-    Set mLeftTopCtrl = Nothing
-    Set mRghtBotCtrl = Nothing
-End Sub
 
