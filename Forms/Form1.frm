@@ -86,6 +86,10 @@ Attribute SplitterH.VB_VarHelpID = -1
 Private WithEvents SplitterV As Splitter
 Attribute SplitterV.VB_VarHelpID = -1
 
+Private Sub Form_Load()
+    Me.Caption = Me.Caption & " v" & App.Major & "." & App.Minor & "." & App.Revision
+End Sub
+
 Private Sub Form_Initialize()
     
     Set SplitterH = MNew.Splitter(False, Me, Panel1, "SplitterH", Picture1, Panel2)

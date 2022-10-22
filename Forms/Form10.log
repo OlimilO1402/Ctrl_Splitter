@@ -1,19 +1,2 @@
 Zeile 52: Klasse SHDocVwCtl.WebBrowser des Steuerelements WebBrowser1 war keine geladene Steuerelementklasse.
-Zeile 58: Der Eigenschaftsname ExtentX in WebBrowser1 ist ungültig.
-Zeile 59: Der Eigenschaftsname ExtentY in WebBrowser1 ist ungültig.
-Zeile 60: Der Eigenschaftsname ViewMode in WebBrowser1 ist ungültig.
-Zeile 61: Der Eigenschaftsname Offline in WebBrowser1 ist ungültig.
-Zeile 62: Der Eigenschaftsname Silent in WebBrowser1 ist ungültig.
-Zeile 63: Der Eigenschaftsname RegisterAsBrowser in WebBrowser1 ist ungültig.
-Zeile 64: Der Eigenschaftsname RegisterAsDropTarget in WebBrowser1 ist ungültig.
-Zeile 65: Der Eigenschaftsname AutoArrange in WebBrowser1 ist ungültig.
-Zeile 66: Der Eigenschaftsname NoClientEdge in WebBrowser1 ist ungültig.
-Zeile 67: Der Eigenschaftsname AlignLeft in WebBrowser1 ist ungültig.
-Zeile 68: Der Eigenschaftsname NoWebView in WebBrowser1 ist ungültig.
-Zeile 69: Der Eigenschaftsname HideFileNames in WebBrowser1 ist ungültig.
-Zeile 70: Der Eigenschaftsname SingleClick in WebBrowser1 ist ungültig.
-Zeile 71: Der Eigenschaftsname SingleSelection in WebBrowser1 ist ungültig.
-Zeile 72: Der Eigenschaftsname NoFolders in WebBrowser1 ist ungültig.
-Zeile 73: Der Eigenschaftsname Transparent in WebBrowser1 ist ungültig.
-Zeile 74: Der Eigenschaftsname ViewID in WebBrowser1 ist ungültig.
-Zeile 75: Der Eigenschaftsname Location in WebBrowser1 ist ungültig.
+Zeile 77: Klasse RichTextLib.RichTextBox des Steuerelements RichTextBox1 war keine geladene Steuerelementklasse.
