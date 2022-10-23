@@ -126,6 +126,10 @@ Friend Sub New_(BolMDI As Boolean, MyOwner As Object, MyContainer As Object, Nam
     'die controls werden horizontal resized
     mInitializing = False
 End Sub
+'Copy to MNew:
+'Public Function Splitter(BolMDI As Boolean, Owner As Object, Container As Object, Name As String, LeftTop As Control, RghtBot As Control) As Splitter
+'    Set Splitter = New Splitter: Splitter.New_ BolMDI, Owner, Container, Name, LeftTop, RghtBot
+'End Function
 
 Public Property Get Width() As Integer
     Width = mWidth * STPX
@@ -236,22 +240,22 @@ Private Sub mPicSplit_KeyDown(KeyCode As Integer, Shift As Integer)
     ResizeControls
 End Sub
 
-Private Sub mXPStyleC_MouseDown(Button As Integer, Shift As Integer, X As Single, y As Single)
-    Call mPicSplit_MouseDown(Button, Shift, X, y)
+Private Sub mXPStyleC_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+    Call mPicSplit_MouseDown(Button, Shift, x, y)
 End Sub
-Private Sub mPicSplit_MouseDown(Button As Integer, Shift As Integer, X As Single, y As Single)
+Private Sub mPicSplit_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
     If Button = vbLeftButton Then
         mBolMove = True
-        OldX = X
+        OldX = x
         OldY = y
     End If
 End Sub
-Private Sub mXPStyleC_MouseMove(Button As Integer, Shift As Integer, X As Single, y As Single)
-    Call mPicSplit_MouseMove(Button, Shift, X, y)
+Private Sub mXPStyleC_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
+    Call mPicSplit_MouseMove(Button, Shift, x, y)
 End Sub
-Private Sub mPicSplit_MouseMove(Button As Integer, Shift As Integer, X As Single, y As Single)
+Private Sub mPicSplit_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
     If mBolMove Then
-        DX = X - OldX
+        DX = x - OldX
         DY = y - OldY
         If mHorVer Then
             If DX <> 0 Then
@@ -266,12 +270,12 @@ Private Sub mPicSplit_MouseMove(Button As Integer, Shift As Integer, X As Single
     End If
     'Form1.Label1.Caption = mLeftTopCtrl.Name
 End Sub
-Private Sub mXPStyleC_MouseUp(Button As Integer, Shift As Integer, X As Single, y As Single)
-    Call mPicSplit_MouseUp(Button, Shift, X, y)
+Private Sub mXPStyleC_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
+    Call mPicSplit_MouseUp(Button, Shift, x, y)
 End Sub
-Private Sub mPicSplit_MouseUp(Button As Integer, Shift As Integer, X As Single, y As Single)
+Private Sub mPicSplit_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
     If Button = vbLeftButton Then
-        DX = X - OldX
+        DX = x - OldX
         DY = y - OldY
         Call ResizeControls
         If mBolMove Then mBolMove = False
