@@ -1,14 +1,31 @@
 VERSION 5.00
 Begin VB.Form Form1 
    Caption         =   "Form1"
-   ClientHeight    =   4575
+   ClientHeight    =   4455
    ClientLeft      =   120
    ClientTop       =   465
    ClientWidth     =   6135
+   BeginProperty Font 
+      Name            =   "Segoe UI"
+      Size            =   9
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
    LinkTopic       =   "Form1"
-   ScaleHeight     =   4575
+   ScaleHeight     =   4455
    ScaleWidth      =   6135
    StartUpPosition =   3  'Windows-Standard
+   Begin VB.CommandButton BtnNext 
+      Caption         =   "Next >>"
+      Height          =   375
+      Left            =   120
+      TabIndex        =   0
+      Top             =   120
+      Width           =   1695
+   End
    Begin VB.PictureBox Panel1 
       Appearance      =   0  '2D
       BackColor       =   &H80000005&
@@ -18,7 +35,7 @@ Begin VB.Form Form1
       ScaleHeight     =   3705
       ScaleWidth      =   5985
       TabIndex        =   1
-      Top             =   720
+      Top             =   600
       Width           =   6015
       Begin VB.PictureBox Picture1 
          AutoSize        =   -1  'True
@@ -28,6 +45,7 @@ Begin VB.Form Form1
          ScaleHeight     =   3555
          ScaleWidth      =   1755
          TabIndex        =   2
+         ToolTipText     =   "VB.PictureBox Picture1"
          Top             =   0
          Width           =   1815
       End
@@ -50,6 +68,7 @@ Begin VB.Form Form1
             ScaleHeight     =   1635
             ScaleWidth      =   3795
             TabIndex        =   4
+            ToolTipText     =   "VB.PictureBox Picture3"
             Top             =   1800
             Width           =   3855
          End
@@ -61,18 +80,11 @@ Begin VB.Form Form1
             ScaleHeight     =   1635
             ScaleWidth      =   3795
             TabIndex        =   5
+            ToolTipText     =   "VB.PictureBox Picture2"
             Top             =   0
             Width           =   3855
          End
       End
-   End
-   Begin VB.CommandButton BtnNext 
-      Caption         =   "Next >>"
-      Height          =   495
-      Left            =   120
-      TabIndex        =   0
-      Top             =   120
-      Width           =   5895
    End
 End
 Attribute VB_Name = "Form1"

@@ -1,21 +1,30 @@
 VERSION 5.00
 Begin VB.Form Form6 
    Caption         =   "Form6"
-   ClientHeight    =   4515
+   ClientHeight    =   4455
    ClientLeft      =   120
    ClientTop       =   465
    ClientWidth     =   6135
+   BeginProperty Font 
+      Name            =   "Segoe UI"
+      Size            =   9
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
    LinkTopic       =   "Form6"
-   ScaleHeight     =   4515
+   ScaleHeight     =   4455
    ScaleWidth      =   6135
    StartUpPosition =   3  'Windows-Standard
    Begin VB.CommandButton BtnNext 
       Caption         =   "Next >>"
-      Height          =   495
+      Height          =   375
       Left            =   120
-      TabIndex        =   1
+      TabIndex        =   0
       Top             =   120
-      Width           =   5895
+      Width           =   1695
    End
    Begin VB.PictureBox Panel1 
       Appearance      =   0  '2D
@@ -25,8 +34,8 @@ Begin VB.Form Form6
       Left            =   0
       ScaleHeight     =   3705
       ScaleWidth      =   6105
-      TabIndex        =   0
-      Top             =   720
+      TabIndex        =   1
+      Top             =   600
       Width           =   6135
       Begin VB.OptionButton Option2 
          Caption         =   "Option2"

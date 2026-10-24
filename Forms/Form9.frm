@@ -1,14 +1,31 @@
 VERSION 5.00
 Begin VB.Form Form9 
    Caption         =   "Form9"
-   ClientHeight    =   4515
+   ClientHeight    =   4455
    ClientLeft      =   120
    ClientTop       =   465
    ClientWidth     =   6135
+   BeginProperty Font 
+      Name            =   "Segoe UI"
+      Size            =   9
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
    LinkTopic       =   "Form9"
-   ScaleHeight     =   4515
+   ScaleHeight     =   4455
    ScaleWidth      =   6135
    StartUpPosition =   3  'Windows-Standard
+   Begin VB.CommandButton BtnNext 
+      Caption         =   "Next >>"
+      Height          =   375
+      Left            =   120
+      TabIndex        =   0
+      Top             =   120
+      Width           =   1695
+   End
    Begin VB.PictureBox Panel1 
       Appearance      =   0  '2D
       BackColor       =   &H80000005&
@@ -18,7 +35,7 @@ Begin VB.Form Form9
       ScaleHeight     =   3705
       ScaleWidth      =   6105
       TabIndex        =   1
-      Top             =   720
+      Top             =   600
       Width           =   6135
       Begin VB.DirListBox Dir1 
          Height          =   3465
@@ -48,21 +65,13 @@ Begin VB.Form Form9
             Width           =   3615
          End
          Begin VB.FileListBox File1 
-            Height          =   1845
+            Height          =   1665
             Left            =   0
             TabIndex        =   4
             Top             =   1680
             Width           =   3735
          End
       End
-   End
-   Begin VB.CommandButton BtnNext 
-      Caption         =   "Next >>"
-      Height          =   495
-      Left            =   120
-      TabIndex        =   0
-      Top             =   120
-      Width           =   5895
    End
 End
 Attribute VB_Name = "Form9"

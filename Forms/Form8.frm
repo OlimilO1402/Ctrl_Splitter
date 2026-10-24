@@ -1,21 +1,30 @@
 VERSION 5.00
 Begin VB.Form Form8 
    Caption         =   "Form8"
-   ClientHeight    =   4575
+   ClientHeight    =   4455
    ClientLeft      =   120
    ClientTop       =   465
    ClientWidth     =   6270
+   BeginProperty Font 
+      Name            =   "Segoe UI"
+      Size            =   9
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
    LinkTopic       =   "Form8"
-   ScaleHeight     =   4575
+   ScaleHeight     =   4455
    ScaleWidth      =   6270
    StartUpPosition =   3  'Windows-Standard
    Begin VB.CommandButton BtnNext 
       Caption         =   "Next >>"
-      Height          =   495
+      Height          =   375
       Left            =   120
-      TabIndex        =   1
+      TabIndex        =   0
       Top             =   120
-      Width           =   5895
+      Width           =   1695
    End
    Begin VB.PictureBox Panel1 
       Appearance      =   0  '2D
@@ -25,8 +34,8 @@ Begin VB.Form Form8
       Left            =   0
       ScaleHeight     =   3705
       ScaleWidth      =   6105
-      TabIndex        =   0
-      Top             =   720
+      TabIndex        =   1
+      Top             =   600
       Width           =   6135
       Begin VB.PictureBox Panel2 
          Appearance      =   0  '2D
@@ -40,14 +49,14 @@ Begin VB.Form Form8
          Top             =   0
          Width           =   3975
          Begin VB.ListBox List3 
-            Height          =   1620
+            Height          =   1410
             Left            =   0
             TabIndex        =   5
             Top             =   1800
             Width           =   3855
          End
          Begin VB.ListBox List2 
-            Height          =   1620
+            Height          =   1410
             Left            =   0
             TabIndex        =   4
             Top             =   0
@@ -55,7 +64,7 @@ Begin VB.Form Form8
          End
       End
       Begin VB.ListBox List1 
-         Height          =   3570
+         Height          =   3435
          Left            =   0
          TabIndex        =   2
          Top             =   0

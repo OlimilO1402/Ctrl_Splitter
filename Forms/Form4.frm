@@ -1,21 +1,30 @@
 VERSION 5.00
 Begin VB.Form Form4 
    Caption         =   "Form4"
-   ClientHeight    =   4575
+   ClientHeight    =   4455
    ClientLeft      =   120
    ClientTop       =   465
    ClientWidth     =   6255
+   BeginProperty Font 
+      Name            =   "Segoe UI"
+      Size            =   9
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
    LinkTopic       =   "Form4"
-   ScaleHeight     =   4575
+   ScaleHeight     =   4455
    ScaleWidth      =   6255
    StartUpPosition =   3  'Windows-Standard
    Begin VB.CommandButton BtnNext 
       Caption         =   "Next >>"
-      Height          =   495
+      Height          =   375
       Left            =   120
-      TabIndex        =   1
+      TabIndex        =   0
       Top             =   120
-      Width           =   5895
+      Width           =   1695
    End
    Begin VB.PictureBox Panel1 
       Appearance      =   0  '2D
@@ -25,8 +34,8 @@ Begin VB.Form Form4
       Left            =   0
       ScaleHeight     =   3705
       ScaleWidth      =   6105
-      TabIndex        =   0
-      Top             =   720
+      TabIndex        =   1
+      Top             =   600
       Width           =   6135
       Begin VB.PictureBox Panel2 
          Appearance      =   0  '2D
@@ -41,7 +50,7 @@ Begin VB.Form Form4
          Width           =   3975
          Begin VB.Frame Frame3 
             BackColor       =   &H00C0C0FF&
-            Caption         =   "Frame2"
+            Caption         =   "Frame3"
             Height          =   1575
             Left            =   0
             TabIndex        =   5
